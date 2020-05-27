@@ -4,7 +4,6 @@ from django.db import models
 
 
 class Post(models.Model):
-    image = models.ImageField()
     title = models.CharField(max_length=100)
     day = models.DateField()
     overview = models.TextField()
