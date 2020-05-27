@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+  {% block wellcome %}
+   <div class="row pt-4 mb-5 text-center">
+        <div class="col-12">
+          <h2 class="text-white mb-4">Welcome To Our Patios Gallery</h2>
+        </div>
+      </div>
+    {% endblock wellcome  %}
+
+       {% block title %}<title>Patios</title>{% endblock title %}
+
+{% block content %}
+
+
+        {% for picp in photos %}
+        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
+          <a href="{{ picp.p_images.url }}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{{ picp.p_images.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+       
+{% endblock content %}

@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+       
+  {% block wellcome %}
+   <div class="row mb-5" data-aos="fade-up">
+            <div class="col-12">
+              <h2 class="text-white mb-4 text-center">Read about What We Offer</h2>
+            </div>
+          </div>
+    {% endblock wellcome  %}
+
+       {% block title %}<title>Portfolio</title>{% endblock title %}
+
+{% block content %}
+
+  
+                 {% for p in post %}
+              <div class="col-md-12 text-center" data-aos="fade-up">
+              <div class= "conatainer">
+                  <h2 class="mt-0 mb-2">{{ p.title }}</h2>
+                  <p class="meta mb-3">This was Written on {{ p.day }}</p>
+                  <p>{{ p.overview }}</p>
+                  </div>
+                </div>
+             {% endfor %}
+          
+ 
+
+  {% endblock content %}
+   

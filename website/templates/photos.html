@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% load static  %}
+
+{% block content %}
+
+        {% for pat in patios %}
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{% url 'pic_detail' pat.id %}" class="d-block photo-item">
+            <img src="{{ pat.p_label.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">{{ pat.p_title }}</h3>
+              <span class="meta">{{ pat.p_pic }} PHOTOS</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+       
+        
+        {% for res in resins %}
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{% url 'res_detail' res.id %}" class="d-block photo-item">
+            <img src="{{ res.r_label.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">{{ res.r_title }}</h3>
+              <span class="meta">{{ res.r_pic }} PHOTOS</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        
+        {% for tam in tarmac %}
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{% url 'tam_detail' tam.id %}" class="d-block photo-item">
+            <img src="{{ tam.t_label.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">{{ tam.t_title }}</h3>
+              <span class="meta">{{ tam.t_pic }} PHOTOS</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+       
+        {% for fen in fencing %}
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{% url 'fen_detail' fen.id %}" class="d-block photo-item">
+            <img src="{{ fen.f_label.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">{{ fen.f_title }}</h3>
+              <span class="meta">{{ fen.f_pic }} PHOTOS</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        
+        {% for bap in blockpaving %}
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{% url 'bap_detail' bap.id %}" class="d-block photo-item">
+            <img src="{{ bap.b_label.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">{{ bap.b_title }}</h3>
+              <span class="meta">{{ bap.b_pic }} PHOTOS</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      
+
+         {% for wa in wall %}
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="{% url 'wa_detail' wa.id %}" class="d-block photo-item">
+            <img src="{{ wa.w_label.url }}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <div class="photo-text-more">
+              <h3 class="heading">{{ wa.w_title }}</h3>
+              <span class="meta">{{ wa.w_pic }} PHOTOS</span>
+            </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        
+{% endblock content %}

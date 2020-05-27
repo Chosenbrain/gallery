@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+  {% block wellcome %}
+   <div class="row pt-4 mb-5 text-center">
+        <div class="col-12">
+          <h2 class="text-white mb-4">Kindly Request For Our Free Quotation</h2>
+        </div>
+      </div>
+    {% endblock wellcome  %}
+
+       {% block title %}<title>Quotation</title>{% endblock title %}
+
+{% block content %}
+
+ {% if first_name %}
+<center>
+<h1>Thanks {{ first_name }} </h1>
+<p>we will get back to you shortly</p>
+</center>
+{% else %}
+        <div class="col-md-6 pt-4"  data-aos="fade-up">
+          <h2 class="text-white mb-4">Contact Me</h2>
+
+          <div class="row">
+            <div class="col-md-12">
+              <p class="mb-5"><strong>You Can Call Us on 07570 928472, 01527 907845, 01905 886129</strong></p>
+              
+
+              <div class="row">
+                <div class="col-md-12">
+                  <form action="{% url 'quotes' %}" method="POST">
+                  {% csrf_token %}
+                    <div class="row form-group">
+                      <div class="col-md-6 mb-3 mb-md-0">
+                        <label class="text-white" for="fname">First Name</label>
+                        <input type="text" name="first_name" id="fname" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="text-white" for="lname">Last Name</label>
+                        <input type="text" name="last_name"id="lname" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row form-group">
+                      
+                      <div class="col-md-12">
+                        <label class="text-white" for="email">Email</label> 
+                        <input type="email" name="message_email"id="email" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row form-group">
+                      
+                      <div class="col-md-12">
+                        <label class="text-white" for="service">Service</label> 
+                        <input type="subject" name="service"id="subject" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row form-group mb-5">
+                      <div class="col-md-12">
+                        <label class="text-white" for="message">Message</label> 
+                        <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                      </div>
+                    </div>
+
+        
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+   {% endblock content %}
+
+  

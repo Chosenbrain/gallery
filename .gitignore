@@ -1,0 +1,10 @@
+virtual
+.vscode/
+media
+
+*.log
+db.sqlite3
+*.db
+__pycache__/
+*.py[cod]
+*$py.class
